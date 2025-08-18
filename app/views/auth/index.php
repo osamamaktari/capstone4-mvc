@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>user index home</h1>
+    <h1>welcome,you logged in successfully</h1>
 </body>
 </html>
