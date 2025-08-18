@@ -22,7 +22,7 @@ final class App
                         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                     ]
                 );
-                   echo "Database connection established successfully.";
+                //    echo "Database connection established successfully.";
             } catch (PDOException $e) {
                 die("Database connection failed: " . $e->getMessage());
             }

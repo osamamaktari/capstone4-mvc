@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/login" method="POST">
+    <form action="/capstone4-mvc/public/auth" method="POST">
     <input type="email" name="email" required>
     <input type="password" name="password" required>
     <button type="submit">Login</button>

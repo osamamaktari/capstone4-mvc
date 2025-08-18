@@ -2,34 +2,45 @@
 
 namespace App\Controllers;
 
-use App\Models\User;
+use App\Models\Users;
 
-function showloginForm(){
+class UsersControllers{
 
-    require __DIR__ . '/../views/auth/login.php';
-}
+  public function index() {
+        echo "User Home page";
+     
+    }
+
 
 function login(){
+       
+   
 
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
     if (empty($email) || empty($password)) {
         echo "Email and password are required.";
+require __DIR__ . '/../views/auth/login.php';
         return;
     }
 
-    $userModel = new User();
+    $userModel = new Users();
     $user = $userModel->login($email, $password);
 
     if ($user) {
         session_start();
         $_SESSION['user'] = $user;
-        header('Location: /dashboard');
-        exit;
+    echo "successfully logged in";
+        // header('Location: /dashboard');
+        // exit;
+         require __DIR__ . '/../views/auth/index.php';
+    ;
     } else {
         $err= "Invalid email or password.";
         
-         require __DIR__ . '/../views/auth/login.php';
+require __DIR__ . '/../views/auth/failed.php';
     }
 }
+}
+

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Core\App;
 
-class User{
+class Users{
     private $db;
   
     public function __construct() {
@@ -23,7 +23,7 @@ class User{
 
 $user=$this->getUser($email);
 
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && $password === $user['password']) {
             return $user;
         }
 

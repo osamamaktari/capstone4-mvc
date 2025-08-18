@@ -1,5 +1,6 @@
 <?php
 namespace App\Core;
+use App\Controllers;
 
 final class Router
 {
