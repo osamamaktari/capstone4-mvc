@@ -32,14 +32,14 @@ require __DIR__ . '/../views/auth/login.php';
         session_start();
         $_SESSION['user'] = $user;
     echo "successfully logged in";
-        // header('Location: /dashboard');
-        // exit;
-         require __DIR__ . '/../views/auth/index.php';
+        header('Location:http://localhost:5173/');
+        exit;
+        //  require __DIR__ . '/../views/auth/index.php';
     ;
     } else {
-        $err= "Invalid email or password.";
+      echo  $err= "Invalid email or password.";
         
-require __DIR__ . '/../views/auth/failed.php';
+require __DIR__ . '/../views/auth/login.php';
     }
 }
 }
