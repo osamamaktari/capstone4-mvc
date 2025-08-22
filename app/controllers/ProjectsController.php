@@ -13,8 +13,6 @@ class ProjectsController{
     {
         $project  = new Projects();
         $modelprojects =$project->all();
-         header("Access-Control-Allow-Origin: *");
-         header("Content-Type: application/json;CHARSET=UTF-8");
         echo json_encode( $modelprojects);
     
     }

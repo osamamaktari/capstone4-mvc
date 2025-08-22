@@ -10,9 +10,12 @@ class Projects{
  public function __construct() {
         $this->db = App::db();
     }
+ 
     public function all()
-    {
-        $stmt = $this->db->query("SELECT * FROM projects");
-        return $stmt->fetchAll();
-    }
+{
+    $stmt = $this->db->prepare("SELECT * FROM projects");
+    $stmt->execute();   
+    return $stmt->fetchAll();
+}
+
 }
