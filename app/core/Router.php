@@ -5,13 +5,14 @@ use App\Controllers;
 final class Router
 {
     
-    private array $routes = ['GET' => [], 'POST' => []];
+    private array $routes = ['GET' => [], 'POST' => [],'PATCH'=>[]];
 
     public function get(string $path, $handler): void  { $this->routes['GET'][$this->norm($path)]  = $handler; }
     public function post(string $path, $handler): void { $this->routes['POST'][$this->norm($path)] = $handler; }
     public function put(string $path, $handler): void  {$this->routes['PUT'][$this->norm($path)] = $handler;}
     public function delete(string $path, $handler):void { $this->routes['DELETE'][$this->norm($path)] = $handler;}
     public function options(string $path, $handler): void {$this->routes['OPTIONS'][$this->norm($path)] = $handler;}
+    public function patch(string $path, $handler):void { $this->routes['PATCH'][$this->norm($path)] = $handler;}
 
 
     public function dispatch(string $method, string $uri): void
@@ -19,10 +20,11 @@ final class Router
 
 
         header("Access-Control-Allow-Origin: *");
-        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH,OPTIONS");
         header("Access-Control-Allow-Headers: Content-Type, Authorization");
         header("Content-Type: application/json; charset=UTF-8");
           
+  
 
 
 
@@ -50,4 +52,7 @@ final class Router
         $p = rtrim($p, '/');
         return $p === '' ? '/' : $p;
     }
+
+
+    
 }
