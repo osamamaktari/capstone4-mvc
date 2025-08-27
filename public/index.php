@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 $sessionPath = realpath(__DIR__ . '/../sessions');
 session_save_path($sessionPath);
 

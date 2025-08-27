@@ -34,6 +34,8 @@ $router->patch('/capstone4-mvc/public/Volunteers/restore',[VolunteersController:
 $router->post('/capstone4-mvc/public/login', [AuthController::class, 'login']);
 $router->get('/capstone4-mvc/public/check-session', [AuthController::class, 'checkSession']);
 $router->post('/capstone4-mvc/public/logout', [AuthController::class, 'logout']);
+// JWT Token
+$router->get('/capstone4-mvc/public/generate-token', [AuthController::class, 'generateToken']);
 
 
 
